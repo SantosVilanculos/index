@@ -32,8 +32,10 @@ sudo apt-get install -y \
 ```sh
 if [ -d "$HOME/.pyenv/bin" ]; then
   export PATH="$PATH:$HOME/.pyenv/bin"
+fi
 
-  eval "$(pyenv init -)"
+if [ -n "$(command -v pyenv)" ]; then
+  eval "$(pyenv init - zsh)"
   eval "$(pyenv virtualenv-init -)"
 fi
 ```
