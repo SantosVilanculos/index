@@ -13,21 +13,19 @@ rm -rf "${TEMP_DIR}"
 ```sh
 cat <<'EOF' | sudo tee /etc/systemd/system/mailpit.service
 [Unit]
-Description=An email testing tool capturing emails from your application during development.
+Description=An email testing tool capturing emails from your application during development
+After=network.target
 
 [Service]
+Type=simple
+User=www-data
+Group=www-data
 ExecStart=/usr/local/bin/mailpit
 Restart=always
-User=root
-Group=root
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
-EOF
-
-sudo systemctl daemon-reload
-sudo systemctl enable mailpit.service
-sudo systemctl start mailpit.service
 ```
 
 ## endpoint
