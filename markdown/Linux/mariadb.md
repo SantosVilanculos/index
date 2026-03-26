@@ -10,12 +10,12 @@ sudo apt-get install mariadb-server
 
 ### password
 
-# A
+#### A
 ```sh
 sudo mariadb-secure-installation
 ```
 
-# B
+#### B
 ```sh
 sudo mysql -u root
 ```
