@@ -198,8 +198,10 @@ redirect_stderr=true
 stdout_logfile=/var/www/example.com/storage/logs/ssr.log
 stopwaitsecs=3600
 ```
-
+```sh
 sudo supervisorctl update
 sudo supervisorctl restart
-
+```
+```sh
 sudo ufw allow 13714
+```
