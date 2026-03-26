@@ -17,12 +17,7 @@ sudo mariadb-secure-installation
 
 #### B
 ```sh
-sudo mysql -u root
-```
-
-```sql
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
-exit;
+sudo mariadb -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'password'; FLUSH PRIVILEGES;"
 ```
 
 ### expose
