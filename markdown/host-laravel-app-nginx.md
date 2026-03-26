@@ -172,6 +172,14 @@ server {
 ```sh
 sudo systemctl reload nginx
 ```
+---
+```sh
+sudo vim /etc/hosts
+```
+
+```sh
+127.0.0.1 example.com
+```
 
 ---
 
