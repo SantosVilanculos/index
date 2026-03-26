@@ -1,4 +1,4 @@
-[![](https://img.shields.io/github/last-commit/SantosVilanculos/laravel-boilerplate)](https://github.com/SantosVilanculos/annotation/commits/main)
-[![](https://img.shields.io/github/license/SantosVilanculos/laravel-boilerplate)](https://github.com/SantosVilanculos/annotaion/blob/main/LICENSE)
+[![](https://img.shields.io/github/last-commit/SantosVilanculos/index)](https://github.com/SantosVilanculos/index/commits/main)
+[![](https://img.shields.io/github/license/SantosVilanculos/index)](https://github.com/SantosVilanculos/index/blob/main/LICENSE)
 
 ![](./index_librorum_prohibitorum.png)
