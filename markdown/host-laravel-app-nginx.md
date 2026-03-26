@@ -51,6 +51,8 @@ sudo apt-get install -y nginx
 
 sudo systemctl enable nginx
 sudo systemctl start nginx
+
+sudo unlink /etc/nginx/sites-enabled/default
 ```
 
 ## mysql
@@ -63,10 +65,8 @@ sudo apt-get install -y mysql-server
 sudo mysql
 ```
 
-```sql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-FLUSH PRIVILEGES;
-EXIT;
+```sh
+sudo mariadb-secure-installation
 ```
 
 ---
