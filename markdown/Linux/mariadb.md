@@ -1,6 +1,8 @@
 ## install
 
 ```sh
+curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+sudo apt-get update
 sudo apt-get install mariadb-server
 ```
 
@@ -8,6 +10,12 @@ sudo apt-get install mariadb-server
 
 ### password
 
+# A
+```sh
+sudo mariadb-secure-installation
+```
+
+# B
 ```sh
 sudo mysql -u root
 ```
