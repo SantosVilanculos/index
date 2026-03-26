@@ -71,6 +71,8 @@ sudo mariadb-secure-installation
 
 ## configuration
 
+### web server
+
 ```sh
 sudo cp ~/example.com /var/www/example.com
 
@@ -171,9 +173,14 @@ server {
 sudo systemctl reload nginx
 ```
 
+---
 
+### workers/cron
+
+```sh
 sudo apt-get install supervisor -y
 sudo vim /etc/supervisor/conf.d/example.com.conf
+```
 
 ```sh
 [program:queue]
