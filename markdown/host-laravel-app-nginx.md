@@ -102,15 +102,36 @@ sudo chmod -R 775 storage bootstrap/cache
 ```
 
 ---
+```sh
+sudo apt-get install openssl
+
+sudo mkdir /etc/nginx/ssl
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx-selfsigned.key -out /etc/nginx/ssl/nginx-selfsigned.crt
+```
+
+---
 
 ```sh
-sudo vim /etc/nginx/sites-available/default
+sudo unlink /etc/nginx/sites-enabled/default
+
+sudo vim /etc/nginx/sites-available/example.com
 ```
+
+
 
 ```sh
 server {
-    listen 80;
-    listen [::]:80;
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    listen 443 ssl default_server;
+    listen [::]:443 ssl default_server;
+
+    ssl_certificate     /etc/nginx/ssl/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx-selfsigned.key;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+
     server_name example.com;
     root /var/www/example.com/public;
 
