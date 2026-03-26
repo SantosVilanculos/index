@@ -55,14 +55,12 @@ sudo systemctl start nginx
 sudo unlink /etc/nginx/sites-enabled/default
 ```
 
-## mysql
+## mariadb
 
 ```sh
-sudo apt-get install -y mysql-server
-```
-
-```sh
-sudo mysql
+curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+sudo apt-get update
+sudo apt-get install mariadb-server
 ```
 
 ```sh
@@ -70,6 +68,7 @@ sudo mariadb-secure-installation
 ```
 
 ---
+
 ## configuration
 
 ```sh
