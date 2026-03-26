@@ -120,9 +120,13 @@ sudo ln -s /etc/nginx/sites-available/example.com.conf /etc/nginx/sites-enabled/
 
 ```sh
 server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
+    listen 80;
+    listen [::]:80;
+    server_name example.com;
+    return 301 https://$host$request_uri;
+}
 
+server {
     listen 443 ssl default_server;
     listen [::]:443 ssl default_server;
 
