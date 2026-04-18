@@ -147,6 +147,11 @@ server {
 
     charset utf-8;
 
+    # Buffer settings for large headers (Laravel sessions/cookies)
+    fastcgi_buffer_size 512k;
+    fastcgi_buffers 16 512k;
+    fastcgi_busy_buffers_size 512k;
+
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
